@@ -32,3 +32,15 @@
             console.error(error);
         }
     }
+
+    // Get files in root of user's OneDrive
+    async function listFiles() {
+        try {
+            const response = await graphClient
+                .api('/me/drive/root/children')
+                .get();
+            return response.value;
+        } catch (error) {
+            console.error(error);
+        }
+    }
