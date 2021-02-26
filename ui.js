@@ -14,6 +14,10 @@ function displayProfile(user) {
     signInButton.style = "display: none";
     var content = document.getElementById('content');
     content.style = "display: block";
+
+//#region Add for file download
+    displayFiles();
+//#endregion
 }
 
 //#region Add for file download
