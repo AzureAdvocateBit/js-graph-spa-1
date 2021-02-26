@@ -18,8 +18,7 @@
 
 
     // Upload file to OneDrive
-    async function uploadFile(elem) {
-        let file = elem.files[0];
+    async function uploadFile(file) {
         try {
             let response = await largeFileUpload(graphClient, file, file.name);
             console.log(response);
