@@ -16,6 +16,7 @@
         uploadFile(this.files[0])
         .then((response) => {
           displayUploadMessage(`File ${response.name} of ${response.size} bytes uploaded`);
+          displayFiles();
         });
       " />
       <div id="uploadMessage"></div>

@@ -20,7 +20,7 @@
     async function uploadFile(file) {
         try {
             let options = {
-                path: "/Documents",
+                path: "/",
                 fileName: file.name,
                 rangeSize: 1024 * 1024 // must be a multiple of 320 KiB
             };
