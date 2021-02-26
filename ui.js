@@ -26,9 +26,10 @@ async function displayFiles() {
     const files = await listFiles();
     const ul = document.getElementById('downloadLinks');
     for (let file of files) {
-        if (!file.folder) {
+        if (!file.folder && !file.package) {
             let a = document.createElement('a');
-            a.href = file.webUrl;
+            a.href = '#'; //file.webUrl;
+            a.onclick = () => { downloadFile(file); };
             a.appendChild(document.createTextNode(file.name));
             let li = document.createElement('li');
             li.appendChild(a);
