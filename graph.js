@@ -19,7 +19,7 @@
 //#region Add for file download
 
     // Get files in root of user's OneDrive
-    async function listFiles() {
+    async function getFiles() {
         try {
             const response = await graphClient
                 .api('/me/drive/root/children')

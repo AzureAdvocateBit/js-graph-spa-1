@@ -20,7 +20,7 @@ function displayProfile(user) {
 
 async function displayFiles() {
     
-    const files = await listFiles();
+    const files = await getFiles();
     const ul = document.getElementById('downloadLinks');
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
