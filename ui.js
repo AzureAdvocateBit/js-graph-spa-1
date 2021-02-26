@@ -15,3 +15,8 @@ function displayProfile(user) {
     var content = document.getElementById('content');
     content.style = "display: block";
 }
+
+function displayUploadMessage(message) {
+    const messageElement = document.getElementById('uploadMessage');
+    messageElement.innerText = message;
+}

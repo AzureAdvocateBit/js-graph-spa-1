@@ -11,6 +11,16 @@
     <div id="content" style="display: none;">
       <h4>Welcome <span id="userName"></span></h4>
       <p>Your email retrieved from Microsoft Graph is: <span id="userEmail"></span></p>
+      <label>Select a file to upload: </label>
+      <input type="file" onchange="
+        displayUploadMessage(`Uploading ${this.files[0].name}...`);
+        uploadFile(this)
+        .then((response) => {
+          displayUploadMessage(`File ${response.name} of ${response.size} bytes uploaded`);
+        });
+      " />
+      <div id="uploadMessage"></div>
+
     </div>
     <a id="signin" onclick="signIn(); return false;" href="#">
       <img src="ms-symbollockup_signin_light.png" alt="Sign in with Microsoft" />
