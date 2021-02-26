@@ -16,30 +16,19 @@
             .get();
     }
 
-
     // Upload file to OneDrive
     async function uploadFile(file) {
-        try {
-            let response = await largeFileUpload(graphClient, file, file.name);
-            console.log(response);
-            console.log("File Uploaded Successfully.!!");
-            return response;
-        } catch (error) {
-            console.error(error);
-        }
-    }
-    
-    async function largeFileUpload(client, file) {
         try {
             let options = {
                 path: "/Documents",
                 fileName: file.name,
                 rangeSize: 1024 * 1024 // must be a multiple of 320 KiB
             };
-            const uploadTask = await MicrosoftGraph.OneDriveLargeFileUploadTask.create(client, file, options);
+            const uploadTask = await MicrosoftGraph.OneDriveLargeFileUploadTask.create(graphClient, file, options);
             const response = await uploadTask.upload();
+            console.log(`File ${response.name} of ${response.size} bytes uploaded`);
             return response;
-        } catch (err) {
-            throw err;
+        } catch (error) {
+            console.error(error);
         }
     }
