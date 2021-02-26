@@ -11,18 +11,14 @@
     <div id="content" style="display: none;">
       <h4>Welcome <span id="userName"></span></h4>
       <p>Your email retrieved from Microsoft Graph is: <span id="userEmail"></span></p>
-      <input type="file" onchange="
-        displayUploadMessage(`Uploading ${this.files[0].name}...`);
-        uploadFile(this.files[0])
-        .then((response) => {
-          displayUploadMessage(`File ${response.name} of ${response.size} bytes uploaded`);
-          displayFiles();
-        });
-      " />
-      <div id="uploadMessage"></div>
-      <br />
-      <label>Download links:</label>
+      <!-- Add for file download -->
+      <hr />
+      <label>Files in your OneDrive root folder:</label>
       <ul id="downloadLinks"></ul>
+      <!-- Add for file upload -->
+      <hr />
+      <input type="file" onchange="fileSelected(this);" />
+      <div id="uploadMessage"></div>
     </div>
     <a id="signin" onclick="signIn(); return false;" href="#">
       <img src="ms-symbollockup_signin_light.png" alt="Sign in with Microsoft" />
@@ -37,6 +33,7 @@
   <script src="ui.js"></script>
   <script>
     displayProfile(); 
+    // Add for file download
     displayFiles();
   </script>
 </body>

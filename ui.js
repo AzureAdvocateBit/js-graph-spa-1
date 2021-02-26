@@ -16,10 +16,7 @@ function displayProfile(user) {
     content.style = "display: block";
 }
 
-function displayUploadMessage(message) {
-    const messageElement = document.getElementById('uploadMessage');
-    messageElement.innerText = message;
-}
+//#region Add for file download
 
 async function displayFiles() {
     
@@ -40,3 +37,23 @@ async function displayFiles() {
         }
     }
 }
+
+//#endregion
+
+//#region Add for file upload
+
+function fileSelected(e) {
+    displayUploadMessage(`Uploading ${e.files[0].name}...`);
+    uploadFile(e.files[0])
+    .then((response) => {
+      displayUploadMessage(`File ${response.name} of ${response.size} bytes uploaded`);
+      displayFiles();
+    });
+}
+
+function displayUploadMessage(message) {
+    const messageElement = document.getElementById('uploadMessage');
+    messageElement.innerText = message;
+}
+
+//#endregion
