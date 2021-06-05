@@ -3,19 +3,19 @@
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Microsoft 365 Developer Tenant](https://developer.microsoft.com/en-us/microsoft-365/dev-program)
+- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=m365-0000-rogerman)
+- [Microsoft 365 Developer Tenant](https://developer.microsoft.com/microsoft-365/dev-program?WT.mc_id=m365-0000-rogerman)
 
 ### Register Azure AD APP
 
 You have to register an application in Azure Active Directory in order to run this application.
-You could do it manually in the [Azure Portal](https://portal.azure.com/).
+You could do it manually in the [Azure Portal](https://portal.azure.com/?WT.mc_id=m365-0000-rogerman).
 
 #### Register AAD app Manually in Azure Portal
 
-1. [Register a new application](https://docs.microsoft.com/en-gb/azure/active-directory/develop/scenario-spa-app-registration) in the [Azure Portal](https://portal.azure.com/).
-1. Ensure that the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/en-gb/azure/active-directory/develop/v2-oauth2-auth-code-flow). This will require that you redirect URI configured in the portal is of type SPA.
-1. For this sample we will create a [single tenant application](https://docs.microsoft.com/en-us/azure/active-directory/develop/single-and-multi-tenant-apps)
+1. [Register a new application](https://docs.microsoft.com/azure/active-directory/develop/scenario-spa-app-registration?WT.mc_id=m365-0000-rogerman) in the [Azure Portal](https://portal.azure.com/?WT.mc_id=m365-0000-rogerman).
+1. Ensure that the application is enabled for the [authorization code flow with PKCE](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow?WT.mc_id=m365-0000-rogerman). This will require that you redirect URI configured in the portal is of type SPA.
+1. For this sample we will create a [single tenant application](https://docs.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps?WT.mc_id=m365-0000-rogerman)
 
 ### Configure the sample
 
